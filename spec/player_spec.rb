@@ -1,6 +1,9 @@
-describe 'player name' do
+require 'player'
+
+describe Player do
+  subject(:dave) { Player.new('Dave') }
+
   it 'should return the players name' do
-    player = Player.new
-    expect(player.player_name("Dave")).to eq "Dave"
+    expect(dave.player).to eq "Dave"
   end
 end
