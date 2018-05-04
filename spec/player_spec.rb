@@ -12,11 +12,6 @@ describe Player do
     expect(dave.hit_points).to eq described_class::DEFAULT_HIT_POINTS
   end
 
-  it 'damages a players hp' do
-    expect(mittens).to receive(:damage)
-    dave.attack(mittens)
-  end
-
   it 'reduces the players hp' do
     expect { dave.damage }.to change { dave.hit_points }. by(-10)
   end
