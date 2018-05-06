@@ -11,4 +11,10 @@ feature 'Attack and confirm' do
     expect(page).not_to have_content 'Mittens: 60HP'
     expect(page).to have_content 'Mittens: 50HP'
   end
+
+  scenario 'switches turns' do
+    sign_in_and_play
+    click_button("Attack")
+    expect(page).to have_content 'Mittens turn to attack'
+  end
 end

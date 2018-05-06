@@ -8,4 +8,14 @@ it 'damages a players hp' do
   expect(player_2).to receive(:damage)
   game.attack(player_2)
   end
+
+it 'starts game with player 1' do
+  expect(game.player_turn).to eq player_1
+end
+
+it 'switches player turn after each attack' do
+  game.switch_turn
+  expect(game.player_turn).to eq player_2
+end
+
 end
